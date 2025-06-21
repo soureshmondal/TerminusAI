@@ -17,25 +17,6 @@ This project demonstrates the fine-tuning of a small language model (`TinyLlama-
 
 ---
 
-## File Structure
-
-.
-├── agent.py # Main CLI agent logic
-├── evaluate.py # Static + dynamic evaluation scripts
-├── task.ipynb # Data scraping + LoRA training (merged notebook)
-├── data/
-│ └── qa_pairs.json # CLI instruction-answer dataset
-├── evaluation/
-│ ├── eval_static.md # Static evaluation results (Markdown)
-│ ├── eval_dynamic.md # Dynamic evaluation results (Markdown)
-│ ├── static_results.json
-│ └── dynamic_results.json
-├── tinyllama_lora_adapter/ # Saved fine-tuned adapter
-└── logs/
-└── trace.jsonl # JSONL log of agent outputs
-
-
-
 ## Usage
 
 ### 1. Install Dependencies
