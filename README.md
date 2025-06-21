@@ -23,12 +23,12 @@ This project demonstrates the fine-tuning of a small language model (`TinyLlama-
 
 ```bash
 pip install -r requirements.txt
+```
 
-
-2. Data Scraping & Fine-Tuning
+## 2. Data Scraping & Fine-Tuning
 Open task.ipynb and execute:
 
-Q&A scraping (if required)
+## Q&A scraping (if required)
 
 Preprocessing and filtering
 
