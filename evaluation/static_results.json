@@ -1,0 +1,65 @@
+[
+  {
+    "prompt": "Create a new Git branch and switch to it.",
+    "base_plan": "To create a new Git branch and switch to it, you can use the following command:\n\n```\ngit checkout -b [branch_name]\n```\n\nReplace `[branch_name]` with the name of your desired branch. For example:\n\n```\ngit checkout -b my-new-feature\n```\n\nThis will create a new branch called \"my-new-feature\" in your current working directory. You can now switch to this branch by running the following command:\n\n```\ngit checkout master\n```\n\nReplace \"master\" with the name of the branch you want to switch to. This will switch your current branch to the one named \"master\".",
+    "ft_plan": "git checkout -b mybranch master\n\nThis will create a new branch called mybranch, which is the same as master. You can then use git push to push your changes to your remote repository.\nIf you want to keep your local changes in sync with the remote, you can also do:\ngit pull origin mybranch\n\nThis will update your local copy of mybranch with the latest changes from the remote.\nFor more information on branches, see the git help page.\n\nA: If you're using a command line interface (CLI), you can do this by running:\ngit checkout -b mybranch\n\nThe -b option creates a new branch named mybranch.\nIf you're using the GUI, you can do this by clicking on the \"Branches\" tab, then clicking on the \"New Branch\" button.\nIf you want to keep your local changes in sync with the remote, you can also do:\ngit pull origin mybranch\n\nThis will update your local copy of mybranch with the latest changes from the remote.\nIf you want to push your changes to the remote, you can do:\ngit push origin mybranch\n\nThis will push your changes to the remote.",
+    "bleu": 0.05060138814186452,
+    "rouge_l": 0.36799999523328003,
+    "base_score": 2,
+    "ft_score": 2
+  },
+  {
+    "prompt": "Compress the folder reports into reports.tar.gz.",
+    "base_plan": "To compress the folder reports into reports.tar.gz, you can use the following command:\n\n```\ncd /path/to/folder/reports\ntar czvf reports.tar.gz *\n```\n\nReplace `reports` with the name of your folder containing reports. The `-czvf` option creates a compressed tar archive named \"reports.tar.gz\" with all files in the current directory and subdirectories. The `-vf` option specifies the compression level (0-9) for the archive. You can adjust this value to your preference.\n\nOnce the archive is created, you can upload it to a cloud storage service like Google Cloud Storage or Amazon S3. You can also use a web server like Apache or Nginx to serve the archive.",
+    "ft_plan": "tar -czvf reports.tar.gz reports\n\nThis will create a tar archive named reports.tar.gz containing all files in reports directory, including subdirectories.\nThe -z stands for compressing with gzip.\nThe -vf is to add the file name to the filename of the compressed file.\n\nIf you want to compress only some files, use -x option:\ntar -czvf reports.tar.gz --exclude=*.txt reports/\n\n\nNote that this will not work if you have spaces in your filenames.\nUse the -f option to specify the file names instead of using -x.\n\n\nA: You can also use the command\ntar czvf reports.tar.gz --exclude=*.txt reports/\n\nto exclude *.txt from the output.\n\nA: You can use the following command:\ntar czvf reports.tar.gz --exclude=*.txt reports/\n\nExplanation:\n--exclude=*.txt\nThis tells the tar program to exclude the contents of the directory named \"*.txt\" from the output.\n--exclude=*\nThis tells the tar program to",
+    "bleu": 0.07937908683203636,
+    "rouge_l": 0.4150943346323327,
+    "base_score": 2,
+    "ft_score": 2
+  },
+  {
+    "prompt": "List all Python files in the current directory recursively.",
+    "base_plan": "To list all Python files in the current directory recursively, you can use the `ls` command with the `-l` option:\n\n```bash\nls -l ./*.py\n```\n\nThis will list all `.py` files in the current directory and its subdirectories. You can modify this command to include other file types or exclude certain directories. For example, to list only `.py` files in the `src` directory:\n\n```bash\nls -l src/ *.py\n```\n\nReplace `src/` with the name of your project directory. This will list all `.py` files in the `src` directory and its subdirectories.",
+    "ft_plan": "If you're using Windows, you can use the following command:\ndir /s /b *.py\n\nIf you're on Linux or Mac, you can use the following command:\nls -ltr | grep '^d'\n\nIn both cases, the -l flag tells ls to list only directories and not files. The -t flag tells it to sort by name, and the -r flag means that it will include hidden files (i.e., those with a . before their name).\nNote that this is not a complete solution for all situations. For example, if you have a directory named \"python\" but also have a file named \"python.exe\", then the above command will not work. You would need to modify it to exclude \"python.exe\".\n\nA: If you want to ignore hidden files, you can use the -a option:\nfind . -type f -name '*.py' -print0 | xargs -0 -I {} sh -c 'echo \"{}\"'\n\nThis will print out each file name, and then execute echo \"{}\" to print out the full path of each file.\nIf you want to ignore hidden files, you can add -not -",
+    "bleu": 0.02262200677632936,
+    "rouge_l": 0.3370786473728066,
+    "base_score": 2,
+    "ft_score": 2
+  },
+  {
+    "prompt": "Set up a virtual environment and install requests.",
+    "base_plan": "To set up a virtual environment and install requests, follow these steps:\n\n1. Open your terminal or command prompt.\n2. Use the `python` command to create a new virtual environment for your project. For example, if you're working on a Python project named \"myproject\", run:\n\n   ```bash\n   python -m venv myproject_env\n   ```\n\n3. Activate the virtual environment by running:\n\n   ```bash\n   source myproject_env/bin/activate\n   ```\n\n4. Install the `requests` package using pip:\n\n   ```bash\n   pip install requests\n   ```\n\nThat's it! You have successfully installed the `requests` package in your virtual environment.",
+    "ft_plan": "To create a new virtual environment, run:\npython3 -m venv myenv\n\nTo activate the environment, run:\nsource myenv/bin/activate\n\nTo install packages in the environment, run:\npip install package1 package2 package3\n\nTo uninstall packages from the environment, run:\npip uninstall package1 package2 package3\n\nTo list installed packages, run:\npip list\n\nTo uninstall all packages, run:\npip uninstall -r requirements.txt\n\nTo delete an environment, run:\ndeactivate\n\nTo see the list of environments, run:\npython3 -m venv --list\n\nTo remove the environment, run:\ndeactivate\n\nTo check if the environment is active, run:\nwhich python\n\nTo check if the environment has been activated, run:\nwhich pip\n\nTo check if the environment has been activated, run:\nwhich python3\n\nTo check if the environment has been activated, run:\nwhich pip3\n\nTo check if the environment has been activated, run:\nwhich python2\n\nTo check if the environment has been activated, run:\nwhich pip2",
+    "bleu": 0.023119659567629635,
+    "rouge_l": 0.273504268566002,
+    "base_score": 2,
+    "ft_score": 2
+  },
+  {
+    "prompt": "Fetch only the first ten lines of a file named output.log.",
+    "base_plan": "To fetch only the first ten lines of a file named output.log, you can use the `head` command:\n\n```bash\nhead -n 10 output.log\n```\n\nThis will display the first 10 lines of the file in a new terminal window or tab.",
+    "ft_plan": "For the sake of simplicity, you can use awk:\nawk '{print $0}' input.txt | head -n10\n\nThis will print the first 10 lines of the file.\nIf you want to print all lines, then you need to specify the -f option:\nawk '{print $0}' input.txt -f\n\nOr if you have GNU awk (which is the default on Ubuntu), you can use the -F option:\nawk '{print $0}' input.txt -F' '\n\nThe -F option specifies that the field separator should be a single space character.\nIf you want to print all lines except the first one, you can use the -v option:\nawk '{if ($0 ~ /^[[:space:]]*#/){print $0}}' input.txt -v '!firstline'\n\nThis will print all lines except the first line.\nIf you want to print all lines except the last one, you can use the -v option again:\nawk '{if ($0 ~ /^[[:space:]]*#/){print $0}}' input.txt -v 'lastline'\n\nThis will print all",
+    "bleu": 0.014383353518858902,
+    "rouge_l": 0.2307692264367604,
+    "base_score": 2,
+    "ft_score": 2
+  },
+  {
+    "prompt": "Search for a pattern in files using grep",
+    "base_plan": "To search for a pattern in files using grep, you can use the -r (recursive) option to recursively search through all directories and subdirectories within the current directory. Here's an example command:\n\n```bash\ngrep -r \"pattern\" .\n```\n\nThis will search through all files and directories within the current directory and its subdirectories for any occurrences of the pattern \"pattern\". The \"-r\" flag specifies that we want to recursively search through all directories and subdirectories. You can modify this command to search for patterns within specific directories or files by adding the appropriate flags. For example:\n\n```bash\ngrep -r \"pattern\" /path/to/directory/*.txt\n```\n\nThis command will search for patterns within all files in the \"/path/to/directory\" directory and its subdirectories. Note that you can also use regular expressions (regex) with grep instead of simple strings. For example:\n\n```bash\ngrep -E \"pattern\" *.txt\n```\n\nThis command will search for patterns within all files named \"*.txt\" in the current directory and its subdirectories. You can also use wildcards (e.g., \"*\")",
+    "ft_plan": "The -r option will search recursively, so you can use it with the -f option to specify the file(s) to search:\ngrep -r \"pattern\" *\n\nIf you want to search only within a directory, you can use -I instead of -f:\ngrep -rI \"pattern\" *\n\nIf you want to exclude certain directories, you can use -exclude-dir and include them with -include-dir:\ngrep -rI \"pattern\" -exclude-dir /path/to/excluded/directories/* -include-dir /path/to/included/directories/*\n\nIf you want to search for a pattern in all files, you can use -e:\ngrep -rI \"pattern\" *.txt\n\nNote that this is not a complete list of options, but just some examples. You should consult the man page for more information on each option.\n\nA: The -r option searches recursively, so you can use it with the -f option to specify the file(s) to search:\ngrep -r \"pattern\" *\n\nIf you want to search only within a directory, you can use -I instead of -f",
+    "bleu": 0.06535265433928922,
+    "rouge_l": 0.36129031759750263,
+    "base_score": 2,
+    "ft_score": 2
+  },
+  {
+    "prompt": "Print the first column of a CSV file using awk",
+    "base_plan": "To print the first column of a CSV (comma separated values) file using awk, you can use the following command:\n\n```bash\nawk '{print $1}' filename.csv\n```\n\nThis command will print the first column (the header row) of the CSV file named `filename.csv`. The `{}` brackets around `$1` in the command represent the current line number and the value of the first column (in this case, the header).",
+    "ft_plan": "awk '{print $1}' file.csv\n\nThis will print the first column (the header) of each line in the file.\nIf you want to print the whole line, use:\nawk '{print $0}' file.csv\n\n\nA: This is what I was looking for:\nawk -F \",\" '{print $1}' file.csv\n\n\nA: You can also use grep and awk:\ngrep -oP '^[^,]*' file.csv | awk '{print $1}'\n\n\nA: Here's an alternative solution that uses sed:\nsed '/^$/d;s/\\(^[^,]*\\), *$/\\1/g' file.csv\n\nThe first part of this command removes any lines that start with a comma. The second part replaces all commas with a space.\n\nA: If you have GNU awk, you can do it like this:\nawk '{print $1}' file.csv\n\n\nA: For those who need to specify a delimiter, here's a more concise version of the previous solutions:\nawk -F\",\" '{print $1}' file.csv\n\nor\nawk -F \"",
+    "bleu": 0.04637996346336211,
+    "rouge_l": 0.2937062891173163,
+    "base_score": 2,
+    "ft_score": 2
+  }
+]

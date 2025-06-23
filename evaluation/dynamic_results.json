@@ -1,1 +1,44 @@
-
+[
+  {
+    "prompt": "Create a new Git branch and switch to it.",
+    "plan": "git checkout -b mybranch master\nThis will create a new branch called \"mybranch\" in the current directory, with all changes from master (which is what you want). You can then use git push origin mybranch to send your changes upstream.\nIf you're using a version control system that supports branches like Subversion or CVS, this should be easy enough for you to do by hand. If not, there may be some other way of doing this.\nNote: This assumes you have already checked out the current working copy into the \"master\" branch. If you haven't done so yet,",
+    "executed_command": "echo git checkout -b mybranch master",
+    "score": 2
+  },
+  {
+    "prompt": "Compress the folder reports into reports.tar.gz.",
+    "plan": "tar czvf reports.tar.gz reports/\ngzip reports.tar.gz\nThis will create two files, one compressed (reports.tar.gz) and another uncompressed (reports). You'll need to extract them separately with something like this:\ntar xzvf reports.tar.gz\nIf you want to keep the original directory structure, you could also do this instead:\ntar c --directory=reports\nThe --directory option tells tar to preserve the",
+    "executed_command": "echo tar czvf reports.tar.gz reports/",
+    "score": 2
+  },
+  {
+    "prompt": "List all Python files in the current directory recursively.",
+    "plan": "If you want to list only .py files, use:\nfind . -name '*.py'\nThis will find any file with name ending with .py (i.e., not including dotfiles). If you want to exclude certain directories from this search, add them as arguments after the pattern:\nfind . -path \"*/\\.*\" ! -name '*~' ! -name '.svn/' ! -name 'CVS/copies/*' ! -name 'CVS/revisions/*' ! -name 'CVS/.gitignore' ! -name 'CVS/.hg",
+    "executed_command": "echo If you want to list only .py files, use:",
+    "score": 2
+  },
+  {
+    "prompt": "Set up a virtual environment and install requests.",
+    "plan": "Create a new directory for your project (e.g., /myproject)\ncd myproject\nmkdir requirements\ntouch requirements/requirements.txt\necho \"requests\" >> requirements/requirements.txt\nNow you can create an empty virtualenv with python -m venv env\n(venv) $ cd ~/.virtualenvs\n$ mkdir myproject\n$ cd myproject\n$ git clone https://github.com/johanbaker/django_rest_framework_starterkit",
+    "executed_command": "echo Create a new directory for your project (e.g., /myproject)",
+    "score": 2
+  },
+  {
+    "prompt": "Fetch only the first ten lines of a file named output.log.",
+    "plan": "$ tail -n +10 /path/to/output.log",
+    "executed_command": "echo tail -n +10 /path/to/output.log",
+    "score": 1
+  },
+  {
+    "prompt": "Search for a pattern in files using grep",
+    "plan": "If you want to search all the files, use -r:\ngrep -R --color=always \"pattern\" *\nThis will find any file that matches the pattern anywhere within its directory tree (including subdirectories). If you only want to match on one level of directories, then use -f instead of -r:\ngrep -Fxvf *.txt -r --color=always \"pattern\"\nThe -F option tells grep not to casefold the filename when searching; this is useful if your filenames contain non-ASCII characters or special characters like spaces and commas. The x",
+    "executed_command": "echo If you want to search all the files, use -r:",
+    "score": 2
+  },
+  {
+    "prompt": "Print the first column of a CSV file using awk",
+    "plan": "awk '{print $1}' input_file > output_file\nThis will print the first column (the header) from each line in the input file to the output file. The {print} command is used to print the value of the current field, which is the first one in this case.\nIf you want to use an array instead of printing it directly, then you can do:\nawk -v OFS=\",\" 'BEGIN{OFS=FS; for(i=2; i<=NF; i++) printf \"%s\",$i}' input_file > output_file\nThe above",
+    "executed_command": "echo awk '{print $1}' input_file > output_file",
+    "score": 2
+  }
+]
