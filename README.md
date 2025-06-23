@@ -28,24 +28,24 @@ pip install -r requirements.txt
 ## 2. Data Scraping & Fine-Tuning
 Open task.ipynb and execute:
 
-## Q&A scraping (if required)
+### Q&A scraping (if required)
 
-Preprocessing and filtering
-
+### Preprocessing and filtering
 LoRA-based training and saving adapter to tinyllama_lora_adapter/
 
-3. Run the CLI Agent
-
+## 3. Run the CLI Agent
+```bash
 python agent.py "Create a tarball of a directory"
-Outputs a step-by-step plan
+```
 
+Outputs a step-by-step plan
 Simulates the command using echo
 
-4. Run Evaluations
-
+## 4. Run Evaluations
+```bash 
 python evaluate.py
+```
 Static Evaluation: BLEU, ROUGE-L, and heuristic score
-
 Dynamic Evaluation: Via dry-run execution through agent.py
 
 Results
@@ -64,7 +64,4 @@ Training Data	7 filtered CLI Q&A pairs
 Max Tokens	1024
 
 
-Author
-Souresh Mondal
-MCA, Jadavpur University
-AI/ML Internship Project — Fenrir Security Pvt Ltd
+
